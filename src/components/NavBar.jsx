@@ -16,8 +16,8 @@ export default function NavBar() {
         <h1 className="header-title">VIDEO INGENIERIA VIRAL</h1>
       </div>
 
-      <nav>
-        <ul className="nav-bar">
+      <nav style={{ position: "relative" }}>
+        <ul className="nav-bar" style={{ justifyContent: "center" }}>
           <li>
             <a href="index.html">
               <img src={logoHome} className="img-nav" alt="" />
@@ -36,9 +36,19 @@ export default function NavBar() {
             </a>
           </li>
         </ul>
-      </nav>
 
-      <CartWidget />
+        {/* CartWidget fijo a la derecha */}
+        <div
+          style={{
+            position: "absolute",
+            right: "12px",
+            top: "50%",
+            transform: "translateY(-50%)",
+          }}
+        >
+          <CartWidget />
+        </div>
+      </nav>
     </header>
   );
 }
